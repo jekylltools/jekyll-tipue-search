@@ -4,18 +4,7 @@ Full text search in Jekyll using Tipue Search. No plugin necessary.
 
 ## Installation
 
-1. Add the `assets/tipuesearch` folder and all contents to your Jekyll assets folder. This is usually `assets`. For example:
-
-	```
-	assets/
-	| tipuesearch/
-	| | img/
-	| | | search.png
-	| | tipuesearch.css
-	| | tipuesearch.min.js
-	| | tipuesearch_content.js
-	| | tipuesearch_set.js
-	```
+1. Add the `assets/tipuesearch` folder and all contents to your Jekyll assets folder. This is usually `assets`.
 
 2. Add the following to your head template, usually `_includes/head.html`:
 
