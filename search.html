@@ -1,0 +1,20 @@
+---
+title: Search
+description: "Search this site"
+layout: default
+permalink: /search/
+---
+
+<h1>{{ page.title }}</h1>
+
+<form action="/search/">
+  <input type="text" name="q" id="tipue_search_input" autocomplete="off" required>
+</form>
+
+<div id="tipue_search_content"></div>
+
+<script>
+$(document).ready(function() {
+  $('#tipue_search_input').tipuesearch();
+});
+</script>
