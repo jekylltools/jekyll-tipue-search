@@ -4,13 +4,13 @@
 ---
 {% assign index = "" | split: "" %}
 {% for post in site.posts %}
-  {% unless post.exclude_from_search == true %}
+  {% unless post.exclude_from_search == true or site.tipue_search.exclude.files contains post.path %}
     {% assign index = index | push: post %}
   {% endunless %}
 {% endfor %}
 {% if site.tipue_search.include.pages == true %}
   {% for page in site.html_pages %}
-    {% unless page.exclude_from_search == true %}
+    {% unless page.exclude_from_search == true or site.tipue_search.exclude.files contains page.path %}
       {% assign index = index | push: page %}
     {% endunless %}
   {% endfor %}
@@ -19,7 +19,7 @@
   {% for collection in site.tipue_search.include.collections %}
     {% assign documents = site.documents | where:"collection",collection %}
     {% for document in documents %}
-      {% unless document.exclude_from_search == true %}
+      {% unless document.exclude_from_search == true or site.tipue_search.exclude.files contains document.path %}
         {% assign index = index | push: document %}
       {% endunless %}
     {% endfor %}
@@ -37,7 +37,7 @@ var tipuesearch = {"pages": [
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
     "text": {{ document.content | strip_html | normalize_whitespace | jsonify }},
-    "tags": {% if taxonomies == empty %}"",{% else %}{{ taxonomies | join: ' ' | normalize_whitespace | jsonify }},{% endif %}
+    "tags": {% if taxonomies == empty %}"",{% else %}{{ taxonomies | join: " " | normalize_whitespace | jsonify }},{% endif %}
     "url": {{ document.url | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
