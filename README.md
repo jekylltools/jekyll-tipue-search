@@ -4,7 +4,7 @@ Full text search in Jekyll using Tipue Search. No plugin necessary.
 
 ## Installation
 
-1. Add the `assets/tipuesearch` folder and all contents to your Jekyll assets folder. This is usually `assets`.
+1. Add the `assets/tipuesearch` folder and all contents to your Jekyll assets folder, usually the `assets` folder.
 
 2. Add the following to your head template, usually `_includes/head.html`:
 
@@ -22,13 +22,13 @@ Full text search in Jekyll using Tipue Search. No plugin necessary.
 
 ## Usage
 
-Jekyll will use the Liquid code in `tipuesearch/tipuesearch_content.js` to generate a search index. The search form in `search.html` uses Javascript to search the index and display a list of results.
+Jekyll will use the Liquid code in `tipuesearch/tipuesearch_content.js` to generate a search index. The form in `search.html` uses Javascript to search the index and display a list of results.
 
-Refer to the [Tipue Search documentation](http://www.tipue.com/search/docs/) for available configuration options.
+Refer to the [Tipue Search documentation](http://www.tipue.com/search/docs/) for available configuration options for the search form, and display of search results.
 
-### Excluding single items from search index
+### Excluding from search index
 
-You can exclude specific items from the search index with a front-matter variable:
+You can exclude specific documents from the search index with a front-matter variable:
 
 ```
 exclude_from_search: true
@@ -45,7 +45,7 @@ tipue_search:
   index_pages: true
 ```
 
-Include collections in the search index by adding an array to `_config.yml` containing a list of collections:
+Include collections in the search index by adding an array to `_config.yml` containing a list of collections to be indexed:
 
 ```
 tipue_search:
