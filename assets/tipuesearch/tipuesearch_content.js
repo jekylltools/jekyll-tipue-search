@@ -8,11 +8,23 @@
     {% assign documents = documents | push: post %}
   {% endunless %}
 {% endfor %}
-{% for page in site.pages %}
-  {% if page.include_in_search == true %}
-    {% assign documents = documents | push: page %}
-  {% endif %}
-{% endfor %}
+{% if site.tipue_search.index_pages == true %}
+  {% for page in site.html_pages %}
+    {% unless page.exclude_from_search == true %}
+      {% assign documents = documents | push: page %}
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+{% unless site.tipue_search.index_collections == empty %}
+  {% for collection in site.tipue_search.index_collections %}
+    {% assign docs = site.documents | where:"collection","collection" %}
+    {% for document in docs %}
+      {% unless document.exclude_from_search == true %}
+        {% assign documents = documents | push: document %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+{% endunless %}
 var tipuesearch = {"pages": [
 {% for document in documents %}
   {% assign taxonomies = "" | split: "" %}

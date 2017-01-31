@@ -22,23 +22,34 @@ Full text search in Jekyll using Tipue Search. No plugin necessary.
 
 ## Usage
 
-Jekyll will use the Liquid code in `tipuesearch/tipuesearch_content.js` to generate a search index. The search form in `search.html` uses Javascript to search the index and display a list of results. By default, all posts are included in the search index, and all pages are excluded.
+Jekyll will use the Liquid code in `tipuesearch/tipuesearch_content.js` to generate a search index. The search form in `search.html` uses Javascript to search the index and display a list of results.
 
 Refer to the [Tipue Search documentation](http://www.tipue.com/search/docs/) for available configuration options.
 
-### Exclude posts from search index
+### Excluding single items from search index
 
-You can exclude specific posts from the search index with a front-matter variable:
+You can exclude specific items from the search index with a front-matter variable:
 
 ```
 exclude_from_search: true
 ```
 
-### Include pages in search index
-You can include specific pages in the search index with a front-matter variable:
+### Indexing pages and collections
+
+By default, only posts are included in the search index. Pages and collections are not included.
+
+Include pages in the search index by adding this `_config.yml` setting:
 
 ```
-include_in_search: true
+tipue_search:
+  index_pages: true
+```
+
+Include collections in the search index by adding an array to `_config.yml` containing a list of collections:
+
+```
+tipue_search:
+  index_collections: [apples, oranges]
 ```
 
 ## Support
