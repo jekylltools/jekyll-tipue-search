@@ -1,10 +1,10 @@
 # Jekyll Tipue Search
 
-Full text search in Jekyll using Tipue Search. No plugin necessary.
+Full-text search in Jekyll using Tipue Search. No plugin necessary.
 
 ## Installation
 
-1. Add the `assets/tipuesearch` folder and all contents to the Jekyll assets folder, usually the `assets` folder.
+1. Add the `assets/tipuesearch` folder and all contents to the Jekyll assets folder, usually this is `assets`.
 
 2. Add the following to the head template, usually `_includes/head.html`:
 
@@ -30,7 +30,7 @@ Refer to the [Tipue Search documentation](http://www.tipue.com/search/docs/) for
 
 By default, only posts are included in the search index. Pages and collections are not included.
 
-Add the following to the `_config.yml` to include pages and collections. `collections` is an array containing a list of collections to be indexed:
+Add the following to `_config.yml` to include pages and collections. `collections` is an array containing a list of collections to be included:
 
 ```
 tipue_search:
@@ -41,13 +41,13 @@ tipue_search:
 
 ### Excluding from search index
 
-Exclude specific documents from the search index with a front-matter variable:
+Exclude single documents from the search index with a front-matter variable:
 
 ```
 exclude_from_search: true
 ```
 
-Exclude specific files using a setting in `_config.yml`. `files` is an array containing a list of paths to the files you want to ignore:
+Exclude multiple files using a setting in `_config.yml`. `files` is an array containing a list of file paths to be excluded:
 
 ```
 tipue_search:
