@@ -2,31 +2,31 @@
 # Content index for Tipue Search 5.0
 # https://github.com/xHN35RQ/jekyll-tipue-search
 ---
-{% assign documents = "" | split: "" %}
+{% assign index = "" | split: "" %}
 {% for post in site.posts %}
   {% unless post.exclude_from_search == true %}
-    {% assign documents = documents | push: post %}
+    {% assign index = index | push: post %}
   {% endunless %}
 {% endfor %}
 {% if site.tipue_search.index_pages == true %}
   {% for page in site.html_pages %}
     {% unless page.exclude_from_search == true %}
-      {% assign documents = documents | push: page %}
+      {% assign index = index | push: page %}
     {% endunless %}
   {% endfor %}
 {% endif %}
 {% unless site.tipue_search.index_collections == empty %}
   {% for collection in site.tipue_search.index_collections %}
-    {% assign docs = site.documents | where:"collection","collection" %}
-    {% for document in docs %}
+    {% assign documents = site.documents | where:"collection",collection %}
+    {% for document in documents %}
       {% unless document.exclude_from_search == true %}
-        {% assign documents = documents | push: document %}
+        {% assign index = index | push: document %}
       {% endunless %}
     {% endfor %}
   {% endfor %}
 {% endunless %}
 var tipuesearch = {"pages": [
-{% for document in documents %}
+{% for document in index %}
   {% assign taxonomies = "" | split: "" %}
   {% for tag in document.tags %}
     {% assign taxonomies = taxonomies | push: tag %}
