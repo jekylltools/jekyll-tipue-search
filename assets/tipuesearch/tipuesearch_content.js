@@ -15,17 +15,17 @@
 {% endfor %}
 var tipuesearch = {"pages": [
 {% for document in documents %}
-  {% assign taxonomy = "" | split: "" %}
+  {% assign taxonomies = "" | split: "" %}
   {% for tag in document.tags %}
-    {% assign taxonomy = taxonomy | push: tag %}
+    {% assign taxonomies = taxonomies | push: tag %}
   {% endfor %}
   {% for category in document.categories %}
-    {% assign taxonomy = taxonomy | push: category %}
+    {% assign taxonomies = taxonomies | push: category %}
   {% endfor %}
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
     "text": {{ document.content | strip_html | normalize_whitespace | jsonify }},
-    "tags": {% if taxonomy == empty %}"",{% else %}{{ taxonomy | join: ' ' | normalize_whitespace | jsonify }},{% endif %}
+    "tags": {% if taxonomies == empty %}"",{% else %}{{ taxonomies | join: ' ' | normalize_whitespace | jsonify }},{% endif %}
     "url": {{ document.url | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
