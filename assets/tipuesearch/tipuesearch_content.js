@@ -3,14 +3,15 @@
 # https://github.com/xHN35RQ/jekyll-tipue-search
 ---
 {% assign index = "" | split: "" %}
+{% assign excluded_files = site.tipue_search.exclude.files %}
 {% for post in site.posts %}
-  {% unless post.exclude_from_search == true or site.tipue_search.exclude.files contains post.path %}
+  {% unless post.exclude_from_search == true or excluded_files contains post.path %}
     {% assign index = index | push: post %}
   {% endunless %}
 {% endfor %}
 {% if site.tipue_search.include.pages == true %}
   {% for page in site.html_pages %}
-    {% unless page.exclude_from_search == true or site.tipue_search.exclude.files contains page.path %}
+    {% unless page.exclude_from_search == true or excluded_files contains page.path %}
       {% assign index = index | push: page %}
     {% endunless %}
   {% endfor %}
@@ -19,7 +20,7 @@
   {% for collection in site.tipue_search.include.collections %}
     {% assign documents = site.documents | where:"collection",collection %}
     {% for document in documents %}
-      {% unless document.exclude_from_search == true or site.tipue_search.exclude.files contains document.path %}
+      {% unless document.exclude_from_search == true or excluded_files contains document.path %}
         {% assign index = index | push: document %}
       {% endunless %}
     {% endfor %}
