@@ -8,15 +8,15 @@
     {% assign index = index | push: post %}
   {% endunless %}
 {% endfor %}
-{% if site.tipue_search.index_pages == true %}
+{% if site.tipue_search.include.pages == true %}
   {% for page in site.html_pages %}
     {% unless page.exclude_from_search == true %}
       {% assign index = index | push: page %}
     {% endunless %}
   {% endfor %}
 {% endif %}
-{% unless site.tipue_search.index_collections == empty %}
-  {% for collection in site.tipue_search.index_collections %}
+{% unless site.tipue_search.include.collections == empty %}
+  {% for collection in site.tipue_search.include.collections %}
     {% assign documents = site.documents | where:"collection",collection %}
     {% for document in documents %}
       {% unless document.exclude_from_search == true %}
