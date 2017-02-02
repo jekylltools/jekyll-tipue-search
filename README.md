@@ -47,12 +47,14 @@ Exclude single documents from the search index with a front-matter variable:
 exclude_from_search: true
 ```
 
-Exclude multiple files using a setting in `_config.yml`. `files` is an array containing a list of file paths to be excluded:
+Exclude multiple files, tags or categories using a setting in `_config.yml`. `files` is an array containing a list of file paths to be excluded. `tags` and `categories` are arrays containing lists of tags and categories to be excluded:
 
 ```
 tipue_search:
   exclude:
     files: [search.html, _apples/gragg.md, _oranges/valencia.md]
+    tags: [tag1, tag2]
+    categories: [category1, category2]
 ```
 
 ## Support
