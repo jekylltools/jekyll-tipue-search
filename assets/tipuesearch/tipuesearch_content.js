@@ -16,16 +16,14 @@
     {% endunless %}
   {% endfor %}
 {% endif %}
-{% unless site.tipue_search.include.collections == empty %}
-  {% for collection in site.tipue_search.include.collections %}
-    {% assign documents = site.documents | where:"collection",collection %}
-    {% for document in documents %}
-      {% unless document.exclude_from_search == true or excluded_files contains document.path %}
-        {% assign index = index | push: document %}
-      {% endunless %}
-    {% endfor %}
+{% for collection in site.tipue_search.include.collections %}
+  {% assign documents = site.documents | where:"collection",collection %}
+  {% for document in documents %}
+    {% unless document.exclude_from_search == true or excluded_files contains document.path %}
+      {% assign index = index | push: document %}
+    {% endunless %}
   {% endfor %}
-{% endunless %}
+{% endfor %}
 var tipuesearch = {"pages": [
 {% for document in index %}
   {% assign taxonomies = "" | split: "" %}
@@ -38,7 +36,7 @@ var tipuesearch = {"pages": [
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
     "text": {{ document.content | strip_html | normalize_whitespace | jsonify }},
-    "tags": {% if taxonomies == empty %}"",{% else %}{{ taxonomies | join: " " | normalize_whitespace | jsonify }},{% endif %}
+    "tags": {{ taxonomies | join: " " | normalize_whitespace | jsonify }},
     "url": {{ document.url | jsonify }}
   }{% unless forloop.last %},{% endunless %}
 {% endfor %}
