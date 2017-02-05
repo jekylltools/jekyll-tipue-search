@@ -6,10 +6,10 @@
 {% assign excluded_files = site.tipue_search.exclude.files %}
 {% assign excluded_taxonomies = "" | split: "" %}
 {% for tag in site.tipue_search.exclude.tags %}
-  {% assign excluded_taxonomies = excluded_taxonomies | push: tag %}
+  {% assign excluded_taxonomies = excluded_taxonomies | push: tag | uniq %}
 {% endfor %}
 {% for category in site.tipue_search.exclude.categories %}
-  {% assign excluded_taxonomies = excluded_taxonomies | push: category %}
+  {% assign excluded_taxonomies = excluded_taxonomies | push: category | uniq %}
 {% endfor %}
 {% for post in site.posts %}
   {% unless post.exclude_from_search == true or excluded_files contains post.path %}
@@ -25,7 +25,7 @@
       {% endif %}
     {% endfor %}
     {% unless has_excluded_taxonomy == true %}
-      {% assign index = index | push: post %}
+      {% assign index = index | push: post | uniq %}
     {% endunless %}
   {% endunless %}
 {% endfor %}
@@ -44,7 +44,7 @@
         {% endif %}
       {% endfor %}
       {% unless has_excluded_taxonomy == true %}
-        {% assign index = index | push: page %}
+        {% assign index = index | push: page | uniq %}
       {% endunless %}
     {% endunless %}
   {% endfor %}
@@ -65,7 +65,7 @@
         {% endif %}
       {% endfor %}
       {% unless has_excluded_taxonomy == true %}
-        {% assign index = index | push: document %}
+        {% assign index = index | push: document | uniq %}
       {% endunless %}
     {% endunless %}
   {% endfor %}
@@ -74,10 +74,10 @@ var tipuesearch = {"pages": [
 {% for document in index %}
   {% assign taxonomies = "" | split: "" %}
   {% for tag in document.tags %}
-    {% assign taxonomies = taxonomies | push: tag %}
+    {% assign taxonomies = taxonomies | push: tag | uniq %}
   {% endfor %}
   {% for category in document.categories %}
-    {% assign taxonomies = taxonomies | push: category %}
+    {% assign taxonomies = taxonomies | push: category | uniq %}
   {% endfor %}
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
