@@ -1,0 +1,19 @@
+# Config settings
+title: Jekyll Tipue Search Demo
+baseurl: "/jekyll-tipue-search"
+
+# Search settings
+tipue_search:
+  include:
+    pages: true
+  exclude:
+    files: [search.html]
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
