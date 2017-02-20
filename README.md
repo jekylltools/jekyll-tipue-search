@@ -1,6 +1,10 @@
 # Jekyll Tipue Search
 
-Full-text search in Jekyll using Tipue Search. No plugin necessary.
+Full-text search in Jekyll using [Tipue Search](https://github.com/Tipue/Tipue-Search). No plugin necessary.
+
+The search index is generated with pure Liquid. Fully compatible with Github Pages.
+
+View a [live demo running on Github Pages](https://xhn35rq.github.io/jekyll-tipue-search/search/). The code and configuration for the demo is in the [gh-pages branch](https://github.com/xHN35RQ/jekyll-tipue-search/tree/gh-pages).
 
 ## Installation
 
@@ -22,7 +26,7 @@ Full-text search in Jekyll using Tipue Search. No plugin necessary.
 
 ## Usage
 
-Jekyll will use the Liquid code in `tipuesearch/tipuesearch_content.js` to generate a search index. The form in `search.html` uses Javascript to search the index and display a list of results.
+Jekyll uses the Liquid code in `tipuesearch/tipuesearch_content.js` to generate a search index. The form in `search.html` uses Javascript to search the index and display a list of results.
 
 Refer to the [Tipue Search documentation](http://www.tipue.com/search/docs/) for available configuration options for the search form and display of search results.
 
