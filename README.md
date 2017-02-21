@@ -10,15 +10,16 @@ View a [live demo running on Github Pages](https://xhn35rq.github.io/jekyll-tipu
 
 1. Add the `assets/tipuesearch` folder and all contents to the Jekyll assets folder, usually this is `assets`.
 
-2. Add the following to the head template, usually `_includes/head.html`:
+2. Add the following to the head template, usually `_includes/head.html`. Some of these lines are [optional](http://www.tipue.com/search/docs/?d=1):
 
   ```
   {% if page.title == "Search" %}
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script type="text/javascript" src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/tipuesearch/tipuesearch.css" | relative_url }}">
-  <script type="text/javascript" src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
-  <script type="text/javascript" src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/tipuesearch.css" | relative_url }}">
+  <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+  <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
   {% endif %}
   ```
 

@@ -1,5 +1,5 @@
 ---
-# Content index for Tipue Search 5.0
+# Content index for Tipue Search
 # https://github.com/xHN35RQ/jekyll-tipue-search
 ---
 {% assign index = "" | split: "" %}
