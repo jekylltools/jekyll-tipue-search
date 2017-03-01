@@ -1,6 +1,6 @@
 ---
 # Content index for Tipue Search
-# https://github.com/xHN35RQ/jekyll-tipue-search
+# https://github.com/jekylltools/jekyll-tipue-search
 ---
 {% assign index = "" | split: "" %}
 {% assign excluded_files = site.tipue_search.exclude.files %}

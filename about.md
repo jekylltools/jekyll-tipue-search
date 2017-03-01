@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Demo site for [Jekyll Tipue Search](https://github.com/xHN35RQ/jekyll-tipue-search)
+Demo site for [Jekyll Tipue Search](https://github.com/jekylltools/jekyll-tipue-search)
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 
