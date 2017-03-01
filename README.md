@@ -4,7 +4,7 @@ Full-text search in Jekyll using [Tipue Search](https://github.com/Tipue/Tipue-S
 
 The search index is generated with pure Liquid. Fully compatible with Github Pages.
 
-View a [live demo running on Github Pages](https://xhn35rq.github.io/jekyll-tipue-search/search/). The code and configuration for the demo is in the [gh-pages branch](https://github.com/xHN35RQ/jekyll-tipue-search/tree/gh-pages).
+View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-tipue-search/search/). The code and configuration for the demo is in the [gh-pages branch](https://github.com/jekylltools/jekyll-tipue-search/tree/gh-pages).
 
 ## Installation
 
@@ -64,4 +64,4 @@ tipue_search:
 
 ## Support
 
-[Open an issue](https://github.com/xHN35RQ/jekyll-tipue-search/issues) if you have any problems, questions or suggestions for improvement.
+[Open an issue](https://github.com/jekylltools/jekyll-tipue-search/issues) if you have any problems, questions or suggestions for improvement.
