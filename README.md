@@ -13,7 +13,7 @@ View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-
 2. Add the following to the head template, usually `_includes/head.html`. Some of these lines are [optional](http://www.tipue.com/search/docs/?d=1):
 
   ```
-  {% if page.title == "Search" %}
+  {% if page.load_tipue_search %}
   <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
