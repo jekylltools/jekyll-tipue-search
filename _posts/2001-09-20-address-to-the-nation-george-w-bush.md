@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: post
 title: "Address to the Nation"
 categories: speeches
 speaker: "George W. Bush"
 ---
-
-# Address to the Nation
-by George W. Bush on September 20, 2001
 
 Mr. Speaker, Mr. President Pro Tempore, members of Congress, and fellow Americans:
 

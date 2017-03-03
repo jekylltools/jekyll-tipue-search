@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Bacon Ipsum (Short)"
 categories: loremipsum
 ---

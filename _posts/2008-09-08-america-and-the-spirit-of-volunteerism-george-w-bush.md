@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: post
 title: "America and the Spirit of Volunteerism"
 categories: speeches
 speaker: "George W. Bush"
 ---
-
-# America and the Spirit of Volunteerism
-by George W. Bush on September 8, 2008
 
 Thank you, all. Please be seated. Welcome to the South Ground of the White House. It is a joy to be here with members of the armies of compassion. I'm really glad you're here and I appreciate your inspiration to our fellow citizens. I believe you are a constant reminder of the true source of our nation's strength, which is the good hearts and souls of the American people.
 

@@ -1,11 +1,8 @@
 ---
-layout: default
+layout: post
 title: "Obama Inaugural Address"
 categories: speeches
 ---
-
-# Inaugural Address
-by Barak Obama on January 20, 2009
 
 My fellow citizens:
 

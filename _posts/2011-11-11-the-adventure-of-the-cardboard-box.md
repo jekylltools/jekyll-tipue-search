@@ -1,12 +1,9 @@
 ---
-layout: default
+layout: post
 title: "The Adventure of the Cardboard Box"
 author: "Arthur Conan Doyle"
 categories: literature
 ---
-
-# The Adventure of the Cardboard Box
-by Arthur Conan Doyle
 
 In choosing a few typical cases which illustrate the remarkable mental qualities of my friend, Sherlock Holmes, I have endeavoured, as far as possible, to select those which presented the minimum of sensationalism, while offering a fair field for his talents. It is, however, unfortunately impossible entirely to separate the sensational from the criminal, and a chronicler is left in the dilemma that he must either sacrifice details which are essential to his statement and so give a false impression of the problem, or he must use matter which chance, and not choice, has provided him with. With this short preface I shall turn to my notes of what proved to be a strange, though a peculiarly terrible, chain of events.
 
