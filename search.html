@@ -1,13 +1,11 @@
 ---
 title: Search
 description: "Search this site"
-layout: default
+layout: page
 permalink: /search/
 load_tipue_search: true
 exclude_from_search: true
 ---
-
-<h1>{{ page.title }}</h1>
 
 <form action="{{ page.url | relative_url }}">
   <div class="tipue_search_left"><img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" class="tipue_search_icon"></div>
@@ -22,5 +20,3 @@ $(document).ready(function() {
   $('#tipue_search_input').tipuesearch();
 });
 </script>
-
-
