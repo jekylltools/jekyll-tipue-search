@@ -2,7 +2,7 @@
 
 Full-text search in Jekyll with [Tipue Search](https://github.com/Tipue/Tipue-Search). No plugin necessary. Fully compatible with Github Pages.
 
-The search index at `tipuesearch/tipuesearch_content.js` is generated in pure Liquid. The Tipue Search jQuery plugin uses Javascript to search the index and display a list of results.
+The search index at `tipuesearch/tipuesearch_content.js` is generated with Liquid. The [Tipue Search jQuery plugin](http://www.tipue.com/search) uses Javascript to search the index and display a list of results.
 
 View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-tipue-search/search/). The code and configuration for the demo is in the [gh-pages branch](https://github.com/jekylltools/jekyll-tipue-search/tree/gh-pages).
 
@@ -26,19 +26,19 @@ View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-
 3. Add the Tipue Search search form, results display and script to your site. You can use the example search page `search.html` as a starting point. Set `load_tipue_search: true` in the front-matter of every page where you want Tipue Search to display search results. See the Tipue Search documentation for how to [configuring the search form](http://www.tipue.com/search/docs/?d=1) and [display of search results](http://www.tipue.com/search/docs/?d=3).
 
   ```
-	<form action="{{ page.url | relative_url }}">
-	  <div class="tipue_search_left"><img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" class="tipue_search_icon"></div>
-	  <div class="tipue_search_right"><input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required></div>
-	  <div style="clear: both;"></div>
-	</form>
+  <form action="{{ page.url | relative_url }}">
+    <div class="tipue_search_left"><img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" class="tipue_search_icon"></div>
+    <div class="tipue_search_right"><input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required></div>
+    <div style="clear: both;"></div>
+  </form>
 
-	<div id="tipue_search_content"></div>
+  <div id="tipue_search_content"></div>
 
-	<script>
-	$(document).ready(function() {
-	  $('#tipue_search_input').tipuesearch();
-	});
-	</script>
+  <script>
+  $(document).ready(function() {
+    $('#tipue_search_input').tipuesearch();
+  });
+  </script>
   ```
 
 ## Usage
