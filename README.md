@@ -10,10 +10,10 @@ View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-
 
 1. Add the `assets/tipuesearch` folder and all contents to your site.
 
-2. Add the Tipue Search scripts & styles to the head of your theme, either in your default layout, page layout, or perhaps in `_includes/head.html` if your theme supports includes. Some of these lines are [optional](http://www.tipue.com/search/docs/?d=1):
+2. Add the Tipue Search scripts & styles to your theme head. Some of these lines are [optional, see the docs for info](http://www.tipue.com/search/docs/?d=1):
 
   ```
-  {% if page.tipue_search_active %}
+  {% if page.tipue_search_active or layout.tipue_search_active %}
   <link rel="stylesheet" href="{{ "/assets/tipuesearch/css/normalize.css" | relative_url }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
@@ -23,7 +23,7 @@ View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-
   {% endif %}
   ```
 
-3. Add the Tipue Search search form, results display and script to your site. You can use the example search page `search.html` as a starting point. Set `tipue_search_active: true` in the front-matter of every page where you want Tipue Search to display search results. See the Tipue Search documentation for how to [configuring the search form](http://www.tipue.com/search/docs/?d=1) and [display of search results](http://www.tipue.com/search/docs/?d=3).
+3. Add the Tipue Search search form, results display and script to your site. Use the example search page `search.html` for reference. Set `tipue_search_active: true` in the front-matter of every page or layout where you want to display search results. See the Tipue Search documentation for configuration of the [search form](http://www.tipue.com/search/docs/?d=1) and [display of search results](http://www.tipue.com/search/docs/?d=3):
 
   ```
   <form action="{{ page.url | relative_url }}">
