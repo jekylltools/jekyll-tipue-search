@@ -79,7 +79,3 @@ tipue_search:
 ## Support
 
 [Open an issue](https://github.com/jekylltools/jekyll-tipue-search/issues) if you have any problems, questions or suggestions for improvement.
-
-### Build warnings referencing `layout: none`
-
-Support for the front-matter variable of `layout: none` was added in Jekyll 3.5. Older versions of Jekyll will display an error similar to the following when building the site: `Build Warning: Layout 'none' requested in assets/tipuesearch/tipuesearch_content.js does not exist.` To prevent this build warning, edit `tipuesearch/tipuesearch_content.js` and either replace `layout: none` with `layout: null` or remove the `layout` front-matter variable entirely.
