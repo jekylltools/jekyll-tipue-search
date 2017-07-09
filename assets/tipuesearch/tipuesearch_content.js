@@ -2,6 +2,7 @@
 # Content index for Tipue Search
 # https://github.com/jekylltools/jekyll-tipue-search
 # v1.2
+layout: null
 ---
 {% assign index = "" | split: "" %}
 {% assign excluded_files = site.tipue_search.exclude.files %}
