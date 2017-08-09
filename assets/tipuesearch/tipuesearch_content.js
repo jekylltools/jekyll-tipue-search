@@ -1,18 +1,14 @@
 ---
 # Content index for Tipue Search
 # https://github.com/jekylltools/jekyll-tipue-search
-# v1.3
+# v1.4
 layout: null
 ---
 {%- assign index = "" | split: "" -%}
 {%- assign excluded_files = site.tipue_search.exclude.files -%}
-{%- assign excluded_taxonomies = "" | split: "" -%}
-{%- for tag in site.tipue_search.exclude.tags -%}
-  {%- assign excluded_taxonomies = excluded_taxonomies | push: tag | uniq -%}
-{%- endfor -%}
-{%- for category in site.tipue_search.exclude.categories -%}
-  {%- assign excluded_taxonomies = excluded_taxonomies | push: category | uniq -%}
-{%- endfor -%}
+{%- assign excluded_tags = site.tipue_search.exclude.tags | uniq -%}
+{%- assign excluded_categories = site.tipue_search.exclude.categories | uniq -%}
+{%- assign excluded_taxonomies = excluded_tags | concat: excluded_categories | uniq -%}
 {%- for post in site.posts -%}
   {%- unless post.exclude_from_search == true or excluded_files contains post.path -%}
     {%- assign has_excluded_taxonomy = false -%}
@@ -74,13 +70,9 @@ layout: null
 {%- endfor -%}
 var tipuesearch = {"pages": [
 {%- for document in index -%}
-  {%- assign taxonomies = "" | split: "" -%}
-  {%- for tag in document.tags -%}
-    {%- assign taxonomies = taxonomies | push: tag | uniq -%}
-  {%- endfor -%}
-  {%- for category in document.categories -%}
-    {%- assign taxonomies = taxonomies | push: category | uniq -%}
-  {%- endfor -%}
+  {%- assign tags = document.tags | uniq -%}
+  {%- assign categories = document.categories | uniq -%}
+  {%- assign taxonomies = tags | concat: categories | uniq -%}
   {
     "title": {{ document.title | smartify | strip_html | normalize_whitespace | jsonify }},
     "text": {{ document.content | strip_html | normalize_whitespace | jsonify }},
