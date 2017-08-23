@@ -1,0 +1,11 @@
+Your pull request will be ignored.
+
+This repository has been archived.
+
+- Issues are disabled.
+- Pull requests will be ignored.
+- No updates will be made to this repository.
+
+Please fork this repository and merge the proposed changes on your own fork.
+
+Thank you.
